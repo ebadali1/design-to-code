@@ -1,0 +1,199 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+/* three colors and font weights */
+:root {
+    --clr-primary: #e67ce6;
+    --clr-dark: #0C0E36;
+    --clr-light: #fff;
+    --fw-normal: 400;
+    --fw-bold: 700;
+    --fw-black: 900;
+    --grid: 1fr;
+
+}
+
+
+body {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1.125rem;
+    color: var(--clr-dark);
+    line-height: 1.6;
+    margin: 0;
+    background-color: gray;
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1;
+}
+
+.btn {
+    font-size: 1rem;
+    display: inline-block;
+    cursor: pointer;
+    padding: .5em 1.25em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: var(--fw-bold);
+    margin-bottom: .75;
+}
+
+.btn--primary {
+    background-color: var(--clr-primary);
+    color: var(--clr-light);
+
+
+}
+
+.btn--primary:hover {
+    background-color: var(--clr-dark);
+
+}
+
+/* if we use margin padding border that couts width and height because of
+that our outline botton getting large size so we used ouline 
+instead of border and we minus outline offset -3px */
+.btn--outline {
+    /* border: 3px solid var(--clr-primary); */
+    outline: 3px solid var(--clr-primary);
+    outline-offset: -3px;
+    color: var(--clr-primary);
+}
+
+.btn--outline:hover {
+    background: var(--clr-dark);
+    /* border-color: var(--clr-dark); border also change we hover */
+    outline-color: var(--clr-dark);
+
+    color: var(--clr-light);
+}
+
+
+header {
+
+    background-color: var(--clr-light);
+
+    text-align: center;
+}
+
+.logo {
+    margin-top: 1em;
+}
+
+
+.nav__list {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    /* margin-top: 1em; */
+    padding: 0;
+    list-style: none;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    font-weight: var(--fw-bold);
+    letter-spacing: 1px;
+
+
+}
+
+.nav__link {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/*  grid-template-columns: min-content 1fr;} this means set the weather by using columns column first size should depent on the smallest 
+iteme in column while in second the width setted to 2fr */
+.weather {
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    background-color: var(--clr-dark);
+    color: var(--clr-light);
+
+}
+
+.weather__icon {
+    grid-row: span 2;
+    background-color: var(--clr-primary);
+    padding: .5em;
+    display: flex;
+
+}
+
+
+/* margin between grid item not collaspses  */
+
+
+/* do spacing by using rem  because spacing
+ with em reduces thats why we used rem*/
+.weather__info {
+    margin: 0;
+    margin-left: .75rem;
+    text-align: left;
+    /* opacity: .5; */
+    color: rgba(255, 255, 255, 0.7);
+    text-transform: uppercase;
+    font-weight: var(--fw-bold);
+    letter-spacing: 1px;
+    font-size: .75rem;
+    display: flex;
+    align-items: center;
+
+
+}
+
+/* we set opacity to upper weather info to .5 and 
+then we tried to set opacity of degree and cm to 1 which is by
+default but we set the whole .5 so we cant change again
+becz this time the opacity will follow previous opacity which is parent
+so we do we another way of font coloring */
+
+/* without flex box margin auto wouldnt work so we add display block
+on weather infon */
+.weather__info span {
+    width: 50px;
+    color: var(--clr-light);
+    margin-left: auto;
+    margin-right: .75rem;
+    font-size: 1rem;
+
+}
+
+/* skipped the first type pseudo element used in this we is in video */
+.weather__info:first-of-type {
+    margin-top: .5rem;
+
+
+}
+
+.weather__info:last-of-type {
+    margin-bottom: .5rem;
+
+}
+
+
+
+main {
+
+    padding: 3em 1em 5rem;
+
+}
+
+.main--ski {
+    background-image: url(../img/ski2.jpg);
+    background-size: cover;
+
+}
+
+.main__tittle {
+    line-height: 1;
+    font-weight: var(--fw-black);
+    font-size: 3rem;
+}
